@@ -1,0 +1,264 @@
+#palette {
+    width: 18%;
+    height: 75%;
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    left: 3%;
+    top: 12%;
+}
+
+#selectors {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+}
+
+/* 기본 상태 */
+.selector {
+    background-color: var(--cWhite);
+    width: 100%;
+    min-width: 3rem;
+    aspect-ratio: 1 / 1;
+    border-radius: 30% 0% 0% 30%;
+    box-shadow: 0.1rem 0.1rem 0.5rem 0px rgba(26, 28, 32, 0.3);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.selector h3 {
+    color: var(--mainColor);
+    font-size: 90%;
+    font-weight: 600;
+    margin: 5% 0 0;
+}
+.selector-icon {
+    width: 40%;
+    aspect-ratio: 1 / 1;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    position: relative;
+    display: block;
+    filter: var(--main-filter);
+}
+
+/* 선택되었을 때 */
+.selector.selected {
+    background-color: var(--mainColor);
+    box-shadow: 0 0 0.5rem 0 var(--mainColor),
+    inset 0 0 0.5rem 0 var(--mainColor);
+}
+.selector.selected .selector-icon {
+    filter: var(--mWhite-filter)
+}
+.selector.selected h3 {
+    color: var(--mWhite);
+    font-weight: 800;
+}
+
+/* 개별 설정 */
+.color0 {
+    --mainColor: #4e4ef4;
+    --subColor: #3737b5;
+    --main-filter: brightness(0) saturate(100%) invert(28%) sepia(86%) saturate(3768%) hue-rotate(235deg) brightness(97%) contrast(98%);
+}
+#selector0 .selector-icon {
+    background-image: url(../imgs/selector/selector-variable.png);
+}
+.color1 {
+    --mainColor: #f7bf5c;
+    --subColor: #d4a34f;
+    --main-filter: brightness(0) saturate(100%) invert(78%) sepia(57%) saturate(527%) hue-rotate(335deg) brightness(101%) contrast(94%);
+}
+#selector1 .selector-icon {
+    background-image: url(../imgs/selector/selector-control.png);
+}
+.color2 {
+    --mainColor: #993fe3;
+    --subColor: #732cae;
+    --main-filter: brightness(0) saturate(100%) invert(31%) sepia(58%) saturate(2459%) hue-rotate(255deg) brightness(90%) contrast(99%);
+}
+#selector2 .selector-icon {
+    background-image: url(../imgs/selector/selector-io.png);
+}
+.color3 {
+    --mainColor: #0edc82;
+    --subColor: #0fa262;
+    --main-filter: brightness(0) saturate(100%) invert(65%) sepia(63%) saturate(1558%) hue-rotate(102deg) brightness(99%) contrast(89%);
+}
+#selector3 .selector-icon {
+    background-image: url(../imgs/selector/selector-calculation.png);
+}
+.color4 {
+    --mainColor: #f05536;
+    --subColor: #d54b30;
+    --main-filter: brightness(0) saturate(100%) invert(37%) sepia(29%) saturate(6378%) hue-rotate(346deg) brightness(117%) contrast(88%);
+}
+#selector4 .selector-icon {
+    background-image: url(../imgs/selector/selector-type.png);
+}
+.color5 {
+    --mainColor: #f167cf;
+    --subColor: #d247af;
+    --main-filter: brightness(0) saturate(100%) invert(59%) sepia(54%) saturate(1818%) hue-rotate(283deg) brightness(98%) contrast(92%);
+}
+#selector5 .selector-icon {
+    background-image: url(../imgs/selector/selector-function.png);
+}
+
+#bin {
+    width: 80%;
+    height: 100%;
+    background-color: var(--cWhite);
+    border: 0.5rem solid var(--paletteColor);
+    border-radius: 0 1rem 1rem 0;
+    box-shadow: 0 0 0.5rem 0px var(--paletteColor),
+    inset 0 0 0.5rem 0 var(--paletteColor);
+    display: flex;
+    position: relative;
+}
+
+.category {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding: 5% 0 5% 5%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-x: hidden;
+}
+.category::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+.source-block {
+    padding: 0.5rem;
+    margin-bottom: 5%;
+    font-size: 0.9rem;
+    font-weight: 500;
+    box-sizing: border-box;
+    width: fit-content;
+    color: var(--cWhite);
+    background-color: var(--mainColor);
+    white-space: pre;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-radius: 0.5rem;
+    border: 0.3em solid var(--subColor);
+    max-height: 2.3rem;
+    cursor: grab;
+}
+
+.source-value {
+    padding: 0.2rem 0.5rem;
+    margin-bottom: 5%;
+    font-size: 0.9rem;
+    font-weight: 500;
+    box-sizing: border-box;
+    width: fit-content;
+    max-width: 90%;
+    color: var(--cWhite);
+    background-color: var(--mainColor);
+    white-space: pre;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-radius: 100rem;
+    border: 0.2em solid var(--subColor);
+    cursor: grab;
+    display: flex;
+    align-items: center;
+}
+
+.source-cblock {
+    padding: 0.5rem;
+    margin-bottom: 0;
+    font-size: 0.9rem;
+    font-weight: 500;
+    box-sizing: border-box;
+    width: fit-content;
+    color: var(--cWhite);
+    background-color: var(--mainColor);
+    white-space: pre;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-radius: 0.5rem 0.5rem 0.5rem 0;
+    border: 0.3em solid var(--subColor);
+    max-height: 2.3rem;
+    cursor: grab;
+}
+
+
+
+.source-block:active .source-value:active .source-cblock:active {
+    cursor: grabbing;
+}
+
+
+
+
+#bucket {
+    box-sizing: border-box;
+    position: absolute;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(26, 28, 32, 0.7);
+    justify-self: center;
+    border-radius: 0 0.5rem 0.5rem 0;
+    display: none;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#bucket-bin {
+    background-image: url('../imgs/bucket-bin.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 55%;
+    aspect-ratio: 5 / 4;
+    margin-bottom: 20%;
+    filter: var(--mWhite-filter);
+    transition: transform 0.1s;
+}
+
+#bucket-lid {
+    background-image: url('../imgs/bucket-lid.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 50%;
+    aspect-ratio: 3 / 1;
+    filter: var(--mWhite-filter);
+    transition: transform 0.1s;
+}
+
+#bucket:hover {
+    background-color: rgba(75, 58, 29, 0.702);
+}
+
+#bucket:hover > #bucket-bin {
+    filter: brightness(0) saturate(100%) invert(77%) sepia(31%) saturate(807%) hue-rotate(346deg) brightness(101%) contrast(94%);
+    transform: scale(1.1);
+}
+
+#bucket:hover > #bucket-lid {
+    filter: brightness(0) saturate(100%) invert(77%) sepia(31%) saturate(807%) hue-rotate(346deg) brightness(101%) contrast(94%);
+    transform: scale(1.1) translateY(-2rem);
+}

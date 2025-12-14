@@ -1,0 +1,68 @@
+#workspace-section {
+    grid-area: workspace;
+    background-color: var(--mWhite);
+}
+
+#workspace {
+    width: 95%;
+    height: 95%;
+    background-color: var(--cWhite);
+    border-radius: 1rem;
+    box-shadow: 0 0 1rem 0 rgba(26, 28, 32, 0.3);
+
+    position: relative;
+    overflow: auto;
+}
+
+#main-wrapper {
+    position: relative;
+    left: 38%;
+    top: 3%;
+    width: fit-content;
+}
+
+#main-block {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    box-sizing: border-box;
+    width: fit-content;
+    color: var(--cWhite);
+    background-color: var(--mBlack);
+    white-space: nowrap;
+    border-radius: 1rem 1rem 0.5rem 0.5rem;
+    border: 0.3em solid var(--deepgray);
+    cursor: not-allowed;
+    display: flex;
+    flex-direction: row;
+}
+
+#contextmenu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    align-items: center;
+    justify-items: center;
+
+    background-color: var(--deepgray);
+    color: var(--cWhite);
+    font-size: 0.8rem;
+    padding: 0.2rem;
+    margin: 0;
+    width: fit-content;
+    transition: display 0.2s;
+    z-index: 20;
+}
+
+.menu-btn {
+    background-color: var(--mBlack);
+    width: 90%;
+    padding: 0.5rem;
+    margin: 0.1rem;
+}
+
+.menu-btn:hover {
+    background-color: var(--cWhite);
+    color: var(--mBlack);
+    font-weight: 700;
+}

@@ -1,0 +1,58 @@
+#terminal-section {
+    grid-area: terminal;
+    position: relative;
+    background-color: var(--mWhite);
+    width: 100%;
+    min-height: 100%;
+}
+
+#terminal {
+    width: 95%;
+    height: 100%;
+    background-color: var(--mBlack);
+    border-radius: 1rem;
+    box-shadow: 0 0 1rem 0 rgba(26, 28, 32, 0.3);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+}
+
+#input {
+    position: absolute;
+    bottom: 5%;
+    align-self: center;
+    width: 80%;
+    height: 8%;
+    border: 0;
+    border-radius: 1rem;
+    padding-inline-start: 2%;
+    outline: none;
+    font-family: 'Pretendard';
+    font-weight: 600;
+    background-color: var(--cWhite);
+}
+
+#input:disabled {
+    background-color: var(--deepgray);
+}
+
+#output {
+    height: 80%;
+    width: 95%;
+    margin-top: 2%;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+#output::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+.terminal-line {
+    color: var(--mWhite);
+    white-space: pre;
+    margin: 0.1rem;
+}

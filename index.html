@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Block for Text</title>
+    <link rel="stylesheet" href="css/pretendard.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/palette.css">
+    <link rel="stylesheet" href="css/workspace.css">
+    <link rel="stylesheet" href="css/block.css">
+    <link rel="stylesheet" href="css/control.css">
+    <link rel="stylesheet" href="css/terminal.css">
+</head> 
+<body>
+    <div id="main">
+        <header>
+            <div id="logos">
+                <div id="logo-img"></div>
+                <h1 id="logo-text">Block for Text</h1>
+            </div>
+            <div id="btns">
+                <button id="darkmode-btn" class="btn"><span class="icon"></span></button>
+                <button id="setting-btn" class="btn"><span class="icon"></span></button>
+            </div>
+        </header>
+        <section id="workspace-section">
+            <div id="workspace">
+                    <div id="palette">
+                        <div id="selectors">
+                            <div class="selector color0 selected" id="selector0">
+                                <div class="selector-icon"></div>
+                                <h3>변수</h3>
+                            </div>
+                            <div class="selector color1" id="selector1">
+                                <div class="selector-icon"></div>
+                                <h3>제어</h3>
+                            </div>
+                            <div class="selector color2" id="selector2">
+                                <div class="selector-icon"></div>
+                                <h3>입출력</h3>
+                            </div>
+                            <div class="selector color3" id="selector3">
+                                <div class="selector-icon"></div>
+                                <h3>연산</h3>
+                            </div>
+                            <div class="selector color4" id="selector4">
+                                <div class="selector-icon"></div>
+                                <h3>자료형</h3>
+                            </div>
+                            <div class="selector color5" id="selector5">
+                                <div class="selector-icon"></div>
+                                <h3>함수</h3>
+                            </div>
+                        </div>
+                        <div id="bin">
+                            <div id="bucket">
+                                <div id="bucket-lid"></div>
+                                <div id="bucket-bin"></div>
+                            </div>
+                            <div class="category" id="category0"></div>
+                            <div class="category" id="category1"></div>
+                            <div class="category" id="category2"></div>
+                            <div class="category" id="category3"></div>
+                            <div class="category" id="category4"></div>
+                            <div class="category" id="category5"></div>
+                        </div>
+                    </div>
+                <div id="main-wrapper" class="block-wrapper">
+                    <div id="main-block"></span>실행하기 버튼을 눌렀을 때</div>
+                    <div class="next-block"></div>
+                </div>
+            </div>
+        </section>
+        <section id="variable-section"></section>
+        <section id="terminal-section">
+            <div id="terminal">
+                <div id="output"></div>
+                <input id="input" disabled>
+            </div>
+        </section>
+        <section id="control-section">
+            <div id="control-bar">
+                <label id="op-label">
+                    <div id="op-btn"></div>
+                    <span id="op-text">실행하기</span>
+                </label>
+                <label id="sequence-label">
+                    <input id="sequence-toggle" type="checkbox">
+                    <span id="sequence-text">순차 모드</span>
+                </label>
+            </div>
+        </section>
+        <footer>
+            <p id="footer-text">Made by 4MAKFOX</p>
+        </footer>
+    </div>
+
+    <div id="contextmenu">
+        <div id="menuBtn1" class="menu-btn">이 블록만 복제하기</div>
+        <div id="menuBtn2" class="menu-btn">이 블록 이하의 블록 복제하기</div>
+    </div>
+
+    <script type="module" src="js/palette.js"></script>
+    <script type="module" src="js/render.js"></script>
+    <script type="module" src="js/interaction.js"></script>
+    <script type="module" src="js/operate.js"></script>
+    <script type="module" src="js/funcs.js"></script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+#control-section {
+    grid-area: control;
+    background-color: var(--mWhite);
+    min-height: 10%;
+    width: 100%;
+}
+
+#control-bar {
+    width: 90%;
+    height: 70%;
+    background-color: var(--cWhite);
+    border-radius: 1rem;
+    box-shadow: 0 0 1rem 0 rgba(26, 28, 32, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 3%;
+}
+
+#op-label {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    align-items: center;
+    height: 100%;
+}
+
+#op-text {
+    color: var(--mBlack);
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 0.5rem;
+    transition: transform 0.1s ease;
+}
+
+#op-btn {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    position: relative;
+    background-image: url('../imgs/operate_btn.png');
+    height: 65%;
+    aspect-ratio: 1 / 1;
+    filter: var(--mBlack-filter);
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+
+#op-label:hover > #op-text {
+    color: #f7bf5c;
+    font-weight: 900;
+    transform: scale(1.1);
+}
+
+#op-label:hover > #op-btn {
+    filter: brightness(0) saturate(100%) invert(77%) sepia(31%) saturate(807%) hue-rotate(346deg) brightness(101%) contrast(94%);
+    transform: rotate(360deg);
+}
+
+#sequence-label {
+    display: flex;
+    flex-direction: row-reverse;
+    position: relative;
+    align-items: center;
+    height: 100%;
+}
+
+#sequence-text {
+    color: #adb5bd;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-right: 0.3rem;
+}
+
+#sequence-toggle:checked ~ #sequence-text {
+    color: var(--mBlack);
+}
+
+#sequence-toggle {
+    appearance: none;
+    position: relative;
+    border-radius: 10rem;
+    height: 50%;
+    aspect-ratio: 5 / 3;
+    background-color: var(--mWhite);
+    box-shadow: 0 0 0.3rem 0 rgba(26, 28, 32, 0.3);
+}
+
+#sequence-toggle:checked {
+    background-color: #f7bf5c;
+}
+
+#sequence-toggle::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    height: 99%;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    background-color: var(--cWhite);
+    box-shadow: inset 0 0 0.1rem 0.01rem rgba(26, 28, 32, 0.5);
+    transition: right 0.1s linear
+}
+
+#sequence-toggle:checked::after {
+    right: 41%;
+}
